@@ -1,0 +1,25 @@
+gseed             14193
+
+H1                  784
+R1                    8
+
+pdens                 1 # 0.71
+wdens                 1
+wij                   0.01
+wii                  16.
+
+hspc                  0.5e-3
+cspeed                0.4 # 0.5 # 0.1 # 1.0
+
+taum                  0.002
+again                 8
+adgain               32
+taua                  0.020
+nmean              2000
+namp                  0 # 0.01 # 0.05
+
+stimval               1
+nstep                20 # step per pattern
+ngap               1000 # gap between patterns
+
+verbosity             2

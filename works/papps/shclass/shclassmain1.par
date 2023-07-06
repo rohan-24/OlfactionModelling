@@ -1,0 +1,52 @@
+gseed             12144 # 0
+
+Hin                 784
+Min                   1
+Rin                   8
+
+Hhid                 30
+Mhid                100
+Rhid                 10
+
+Mout                 10
+
+inhidpdens            0.1
+inhidpsilent          0.0
+inhidwdens            1
+
+hidagain              4
+inactfn             LIN # SPKLIN
+hidactfn            BCP # SPKBCP
+maxfq               500
+
+inhidtaup             6.0
+hidcltaup             6.0
+
+hidnmean           1000.
+hidnamp               2e-3
+hidbgain             -6
+
+flpscr                1
+pspa		      0.001
+pspc                  0.001
+
+# r0                    3
+# c0                    3
+nrow                 28
+ncol                 28
+
+nutrpat         1000
+nstrpat         1000
+ntetrpat        1000
+ntepat          1000
+
+nepoc                 5
+nstep                10 # per pattern
+ngap                 10 # per pattern
+
+verbosity             3
+logselect             1
+
+
+# 2020-04-28: One run (30x100 Rin=8,Rhid=10 1000 patterns 5 epocs)
+# takes 36.3 sec, meaning 36.3 min for full MNIST run

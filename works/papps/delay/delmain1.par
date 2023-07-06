@@ -1,0 +1,19 @@
+gseed             14193
+
+H1                    6
+R1                    3
+
+pdens                 1 # 0.71
+wdens                 1
+wij                   1
+
+hspc                  0.5e-3
+cspeed                1 # 0.5 # 0.1 # 1.0 # 0.1
+
+again                 2
+
+stimval               0.5
+nstep                20 # step per pattern
+ngap                  0 # 1000 # gap between patterns
+
+verbosity             2

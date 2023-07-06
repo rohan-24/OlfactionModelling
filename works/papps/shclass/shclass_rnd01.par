@@ -1,0 +1,50 @@
+gseed             12144 # 0
+
+Hin                  10
+Min                   5
+Rin                   5
+
+Hhid                 10
+Mhid                 10
+Rhid                  5
+
+Mout                  3
+
+inhidpdens            0.1
+inhidpsilent          0.0
+inhidwdens            1
+
+hidagain              4
+inactfn             LIN # SPKLIN
+hidactfn            BCP # SPKBCP
+maxfq               500
+
+inhidtaup             2.0
+hidcltaup             2.0
+
+hidnmean           1000.
+hidnamp               2e-3
+hidbgain             -8
+
+flipscore             1
+pspa		      0.001
+pspc                  0.001
+
+dataset           rnd01
+
+# r0                    3
+# c0                    3
+# nrow                 28 # 22
+# ncol                 28 # 22
+
+nutrpat              20
+nstrpat              20
+ntetrpat             20
+ntepat                0
+
+nepoc                20
+nstep                10 # per pattern
+ngap                 10 # per pattern
+
+verbosity             1
+logselect             8

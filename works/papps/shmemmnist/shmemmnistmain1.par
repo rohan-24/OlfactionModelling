@@ -1,0 +1,40 @@
+gseed             12144 # 0
+
+Hin                 484
+Min                   1
+Rin                   1
+
+Hhid                 10
+Mhid                 30
+Rhid                  1
+
+inhidpdens            0.2
+inhidpsilent          0.5
+inhidwdens            1
+
+hidagain              4
+inactfn             LIN # SPKLIN
+hidactfn            BCP # SPKBCP
+maxfq               500
+
+inhidtaup             6.0
+hidcltaup             6.0
+
+hidnmean           1000.
+hidnamp               2e-3
+hidbgain             -8
+
+flpscr                1
+pspa		      0.001
+pspc                  0.001
+
+nutrpat          400
+nstrpat          400
+ntetrpat         400
+ntepat           400
+nepoc                 5
+nstep                10 # per pattern
+ngap                 10 # per pattern
+
+verbosity             3
+loglevel              1

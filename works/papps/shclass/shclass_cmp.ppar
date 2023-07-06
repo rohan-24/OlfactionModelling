@@ -1,0 +1,65 @@
+gseed             12144 # 0
+
+Hin                 784
+Min                   1
+Rin                   8
+
+Hhid                 30
+Mhid                100
+Rhid                 10
+
+Mout                 10
+
+# hidseed               0
+hidtaum               0.0015
+hidagain              1
+hidnmean          10000.
+hidnamp               2e-3
+inactfn             LIN # SPKLIN
+hidactfn            BCP # SPKBCP
+maxfq               500
+
+inhidpdens            1.
+inhidpsilent          0.9
+inhidwdens            1
+
+inhidalpha            0 # 1e-4
+hidclalpha            0 # 1e-3
+
+hidcltaup           -1 ## 100
+
+kTp                   0.1 # 1
+kTb                   0.1 # 1
+
+hidbgain             -8 # Only effective if kbjhalf==0
+kbjhalf            -100
+
+strcpl            true # false
+flpscr                1
+nflp                800
+#flpupdint          1000
+pspa		      0 # 0.001
+pspc                  0 # 0.001
+kscsa                 1.
+
+dataset           mnist
+datapath          ../../../MNIST_Data/MNISTorig/
+
+r0                  0 # 11
+c0                  0 # 11
+nrow               28 # 11 # 22
+ncol               28 # 11 # 22
+
+nutrpat           60000
+nstrpat           60000
+ntetrpat          10000
+ntepat            10000
+
+shseed          9987982
+
+nepoc                 5
+nstep                 5 # per pattern
+ngap                  0 # per pattern
+
+verbosity             3 # 0
+logselect             2 # 0

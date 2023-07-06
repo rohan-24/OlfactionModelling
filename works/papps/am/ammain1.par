@@ -1,0 +1,32 @@
+gseed             14193
+
+H1                   10
+M1                   10
+R1                    1
+
+pdens                 1 # 0.71
+wdens                 1
+psilent               0 # 0.71
+
+hspc                  0.5e-3
+cspeed                0 # 1.0 # 0.1
+
+actfn               BCP # SPKBCP
+maxfq              1000
+
+again                 2
+taup                  2.5
+
+flpscr                3
+pspa		      0 # 0.008
+pspc                  0 # 0.001
+
+patform           ortho # rnd01
+ntrpat               10
+ntepat               10
+
+nrep                  1
+nstep                10 # step per pattern
+ngap                 10 # gap between patterns
+
+verbosity             3

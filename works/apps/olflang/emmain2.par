@@ -1,0 +1,51 @@
+fseed         0 #135839 # 0
+
+H 				20
+M 				10
+
+H2				20
+M2				10
+
+igain           5. #0.1 #0.01   #input gain, higher igain should lead to larger change in dsup -> faster dynamics
+again           1.  #increase again higher firing rate -> stronger winner take all
+taum            0.002 #0.15 #0.015         #low taum leads to faster dynamics                (0.01 in Ramon2019, 0.05 in Lansner2013)
+taua            0.5 #0.20 #2.0         #lower taua faster adaptation                         (0.5 from Fiebig 2020)
+adgain          1  #higher adgain, faster adaptation dynamics                               (97 in Lansner2013)
+
+
+taup             5.16   #taup is time constant for learning -> speed of network learning. low taup -> increased weights, forgets faster (seconds). Match to 1 epoch.
+taucond          0.001      
+
+pdens            1.0      
+assocpdens		 1.0    
+wdens            1.0
+cspeed           1 # 0.1 # low #conduction speed (m/sec) (2 m/s in Fiebig 2020)
+
+recuwgain        10.
+assowgain        10.
+bgain            1.
+bwgain			 1
+
+etrnrep          1    #number of times training pattern is repeated for each LTM
+
+nmean          1000.0 #background noise strength, increase noise -> increase firing rates.... nmean is saved in codebase as nmean = nmean*timestep 
+namp            1.0 # 1.
+
+
+nstep          10 # 100
+ngap           10 # 100 #free phase
+recallnstep	   50
+recallngap 	   50
+
+encode_order	   normal #random #normal
+
+runflag            preload	#encode_only (encoding phase only, no assoc training) #full (encode and train assocs) #preload
+
+epsfloat_multiplier 	1	#Default 1
+
+cued_net 		LTM1	#LTM1 or LTM2 (Which network is being cued)
+
+partial_mode	most_overlap		#How to cue partial patterns? uniform - cueHCs number of hypercolumns in each pattern, most_overlap, least_overlap, random
+cueHCs			0 #In modular network tests, refers to the number of HCs to be cued 
+
+distortHCs		0 #Distort a certain number of HCs in pattern during recall

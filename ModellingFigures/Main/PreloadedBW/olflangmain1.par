@@ -1,0 +1,76 @@
+fseed         135839 # 0
+
+H 				15
+M 				15
+
+H2				15
+M2				15
+
+igain           10 #0.1 #0.01   #input gain, higher igain should lead to larger change in dsup -> faster dynamics
+again           1 #increase again -> stronger winner take all.... dsupmax = again * dsup[n]; 	expdsup[n] = exp(again * dsup[n] - dsupmax);
+taum            0.01 #0.15 #0.015         #low taum leads to faster dynamics                (0.01 in Ramon2019, 0.05 in Lansner2013)
+taua            0.28 #0.20 #2.0         #lower taua faster adaptation                         (0.5 from Fiebig 2020)
+adgain          30  #higher adgain, faster adaptation dynamics, adaptation will settle to this value at speed depending on taua            (97 in Lansner2013)
+
+
+taup             20  #taup is time constant for learning (seconds) -> speed of network learning. low taup -> increased weights, forgets faster. Match to 1 epoch.
+taucond          0.001      
+
+pdens            1.0      
+assocpdens		 1.0    
+wdens            1.0
+
+p0               1      #baseline level of sfac (Utilization Factor).... default is 1     (0.3 Fiebig2020)
+tausd            0.0      #depression time constant (s)
+tausf            0.0        #facilitation time constant
+
+cspeed           1. # 0.1 # low #Local conduction speed (m/sec).... idelay[srcn] = dist/cspeed/timestep + 1; 		(2 m/s in Fiebig 2020)
+assoc_cspeed	 1.			#Associative conduction speed (m/sec)
+assoc_dist		 0 	#1e-2 #1e-2 #1e-2 		#0 #Distance between networks (m)
+
+recuwgain        1.8
+assowgain		 0.1
+bgain            1.
+bwgain			 1.
+
+etrnrep          2   #number of times training pattern is repeated for each LTM
+atrnrep			 12	 #number of times training association is repeated when training assocs
+
+nmean          100.0 #background noise strength, increase noise -> increase firing rates.... nmean is saved in codebase as nmean = nmean*timestep 
+namp           1.5 # 1.	#dsup[n] += namp * (nextpoisson() - nmean);
+
+thres 		   0.
+
+nstep          100 # 100
+ngap           100 # 100 #free phase
+recallnstep	   100
+recallngap 	   1000
+
+encode_order	   random #random #normal
+
+
+###### encode_local_only (encode only, no assoc training) , encode_local_asso (train local+assoc) , full (encode and train assocs and do recall) , preload_local ###### preload_localasso
+
+runflag            preload_localasso #preload_localasso	
+
+epsfloat_multiplier 	1	#Default 1
+
+cued_net 		LTM1	#LTM1 or LTM2 (Which network is being cued, Note: Not to be confused with cue net which gets external input)
+
+partial_mode	random		#How to cue partial patterns? uniform - cueHCs number of hypercolumns in each pattern, most_overlap, least_overlap, random
+cueHCs			9 #In modular network tests, refers to the number of HCs to be cued 
+
+distortHCs1		0 #Distort a certain number of HCs in LTM1 patterns during recall
+distortHCs2		0 #Distort a certain number of HCs in LTM2 patterns during recall
+
+
+use_intensity 	0  ##Use intensity ratings to add noise to odor representations (1: Y, 0: N)
+use_familiarity 0  ##Use familiarity ratings to determine number of training repetitions for odors during encoding
+use_trneffort	0  ##If patstat file has training effort specified, use (1) or not (0)
+
+###################################
+#Non CPP PARAMS
+###################################
+
+recall_thresh	0.3 #5e-2	#Min cos distance at which to consider recall success
+
