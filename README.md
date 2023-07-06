@@ -1,5 +1,5 @@
 # OlfactionModelling
-The files here contain the most recent and necessary folders needed to run the olfaction model. It also contains the most recent Figures generated from the model
+The files here contain the most recent and necessary folders needed to run the olfaction model. It also contains the most recent Figures generated from the model.
 
 To get started with running simulations: 
 
@@ -18,6 +18,10 @@ To get started with running simulations:
 If you want to run the simulations with preloaded weights and biases, you must copy the .bin files for the weights and biases to works/build/apps/olflang. Use the weights and biases in ModellingFigures/Main/PreloadedBW/ to run simulations with the most recent preloads. The other subfolders in ModellingFigures contain the different scenarios simulated and contain the Preloaded Bias and Weights for those scenarios as well. 
 
 Before you run simulations with a set of preloaded weights and biases, make sure to check that the parameter _runflag_ in olflangmain1.par is set to "preload_localasso" . Also make sure that the preloadBW() function in olflangmain.cpp is referring to the correct file names for the preloaded weights and biases. 
+
+The patterns for the language and odor networks are created using gmc_v2.py. The patterns themselves can be found in PatternGeneration/GMCPatterns. Check that the path to the patterns is set correctly in the setupLTM() function within olflangmain.cpp.
+
+The way in which the odors and labels are associated is saved as textfiles starting with the word _patstat_ . The most recent simulations used the file patstat_si_nclusters4_topdescs.txt .  
 
 
 
